@@ -69,3 +69,28 @@ DAU = 50 000 000
 Each user sends 10 request per day (feed update, read post)
 RPS = 10 000 000 * 10 / 86 400 = 1200 
 ```
+
+Traffic (create post):
+```
+//
+```
+
+Traffic (reactions):
+```
+//
+```
+
+Traffic (leave comments):
+```
+// 
+```
+
+Traffic (find popular places):
+```
+//
+```
+
+Traffic (view feed and read post):
+```
+//
+```
