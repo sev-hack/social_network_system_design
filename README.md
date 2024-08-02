@@ -24,7 +24,9 @@ Example of the homework for [course by System Design](https://balun.courses/cour
 - on average, each user sends 10 request per day (feed update, read post)
 - the feed has only the first photo from each post of followed travelers
 - max photo size - 2 Mb
+- max number of characters in a comment - 200
 - max number of characters in a post - 1 000
+- max number of characters in a "find popular places" request - 50
 - max amount of subscribers per one user - 100 000
 - post, reactions and comments are always stored
 - timings:
@@ -72,25 +74,31 @@ RPS = 10 000 000 * 10 / 86 400 = 1200
 
 Traffic (create post):
 ```
-//
+Max photo size - 2 Mb (x2 photos in each post)
+Max number of characters in a post - 1 000
+Traffic = 50 * (2048 KB * 2 + 1000 B) = 205 MB/s
 ```
 
 Traffic (reactions):
 ```
-//
+Meta info - 15 B
+Traffic = 600 * 15 B = 9 KB/s
 ```
 
 Traffic (leave comments):
 ```
-// 
+Max number of characters in a comment - 200
+Traffic = 600 * 200 B = 120 KB/s
 ```
 
 Traffic (find popular places):
 ```
-//
+Max number of characters in a "find popular places" request - 50
+Traffic = 250 * 50 B = 12,5 KB/s
 ```
 
 Traffic (view feed and read post):
 ```
-//
+Max photo size - 2 Mb (only one photo)
+Traffic = 1200 * 2048 KB = 2500 MB/s
 ```
